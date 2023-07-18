@@ -1,0 +1,22 @@
+$ cd /
+$ cd dir1
+$ ls
+10000 sfwnts.hbj
+20000 aeh.bin
+dir dir1a
+dir dir1b
+$ cd dir1a
+$ ls
+50000 sfwnts.hbj
+40000 aeh.bin
+$ cd ..
+$ cd dir1b
+$ ls
+90000 sfwnts.hbj
+5000 aeh.bin
+$ cd ..
+$ cd ..
+$ cd dir2
+$ ls
+20000 aeh.bin
+

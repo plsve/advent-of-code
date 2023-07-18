@@ -6,6 +6,10 @@ function main() {
   const rows: string[] = input.split("\r\n\r\n");
   const cratesInput = rows[0];
   const proceduresInput = rows[1];
+  console.log(cratesInput);
+  console.log(proceduresInput);
+  
+  
   const procedures = proceduresInput.split("\r\n");
 
   function getCratesToMove(procedure: string): number {
@@ -64,13 +68,15 @@ function main() {
     const fromCol = getFromCol(proc) - 1;
     const toCol = getToCol(proc) - 1;
 
+    const poppedArr: any[] = [];
     for (let i = 0; i < cratesToMove; i++) {
       const popped = crateStacks[fromCol].pop();
-      crateStacks[toCol].push(popped);
+      poppedArr.push(popped);
     }
+    crateStacks[toCol].push(...poppedArr.reverse());
 
     console.log(crateStacks);
-    console.log(crateStacks.map((e: any) => e[e.length - 1]).join("")); // ~2h
+    console.log(crateStacks.map((e: any) => e[e.length - 1]).join("")); // ~15m
   }
 }
 
